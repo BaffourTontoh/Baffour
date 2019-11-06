@@ -1,0 +1,37 @@
+package Week2;
+import java.util.Scanner;
+
+public class Work5 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		//Create a scanner input to collect input
+Scanner input=new Scanner(System.in);
+		//generate a random number between 1 and 10
+        int random= (int) (Math.random()*10) + 1;
+	   //generate a random number between 1 and 10
+		int random1= (int) (Math.random()*10) + 1;
+	//Prompt the user to enter an answer
+System.out.printf("What is %d  + %d ?",random,random1);
+		//Store the user response into a variable
+		int response = input.nextInt();
+		//Close the scanner object
+		input.close();
+		//Test the user response to confirm if it is correct
+if(response == random +  random1){
+		 //Print out a statement if the user answer is correct	
+		System.out.println("Correct, congratulation");
+		}
+  else {
+	    //Print out a statement if the users answer is correct
+			System.out.println("incorrect, Try again");
+			
+		
+	}
+	
+}
+}
+
+		
+		
+		
