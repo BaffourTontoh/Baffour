@@ -1,0 +1,71 @@
+import java.util.Scanner;
+
+public class Arraytry {
+
+	public static void main(String[] args) {
+
+	        Scanner in = new Scanner(System.in);
+	        System.out.println("How many students: ");
+	        int size = in.nextInt();
+	        double[] scores = new double[size];
+	        double[] scores1 = new double[size];
+	        
+	        System.out.println("---------exam1----");
+	        System.out.println("Enter student score: ");
+	        for (int i = 0; i < scores.length; i++)
+	           scores[i] = in.nextDouble();
+	        System.out.println("Do you want to change a score?(Y/N)");
+	        String answer = in.next();
+	        if (answer.equals("Y")) {
+	            System.out.println("Enter the student number:");
+	            int studNum = in.nextInt();  
+	            System.out.println("Enter the new score:");
+	            scores[studNum - 1] = in.nextDouble();
+	            for (double d : scores)
+	                System.out.println(d);
+	            avg(scores);
+	        } else {
+	            avg(scores);
+	            
+	        }
+	        System.out.println("exam2-------------");
+	        System.out.println("Enter student score: ");
+	        for (int i = 0; i < scores1.length; i++)
+	           scores1[i] = in.nextDouble();
+	        System.out.println("Do you want to change a score?(Y/N)");
+	        String answer1 = in.next();
+	        if (answer1.equals("Y")) {
+	            System.out.println("Enter the student number:");
+	            int studNum1 = in.nextInt();  
+	            System.out.println("Enter the new score:");
+	            scores1[studNum1 - 1] = in.nextDouble();
+	            for (double d1 : scores1)
+	                System.out.println(d1);
+	            avg(scores1);
+	        } else {
+	            avg(scores1);
+	       
+	            
+	        }
+	        
+	        
+	        
+	        
+
+	    }
+	    public static void avg(double[] scores) {
+	        double sum = 0.0, avg = 0.0;
+	        for (int i = 0; i < scores.length; i++) {
+	            sum += scores[i]; // <=> sum = sum + scores[i];
+	        }
+	        avg = sum / scores.length;
+	        System.out.println("The avg of scores is: " + avg);
+	        
+	       
+	        
+	        
+	       
+	    }
+	    
+	}
+	
