@@ -1,0 +1,35 @@
+package com.perScholas;
+
+import java.util.Scanner;
+
+public class HomeWork1 {
+
+	public static void main(String[] args) {
+		Scanner input = new Scanner(System.in);
+	//	initialize and declare all the string variables
+		String email;
+		String password;
+		String pattern = "(?=.*[a-z])(?=.*[@#$%^&+=])(?=.*[0-9]).{5,}";
+		String regex = "^[\\w-_\\.+]*[\\w-_\\.]\\@([\\w]+\\.)+[\\w]+[\\w]$";
+		
+//		prompt user to enter email & password
+//		Use do,if and while loop
+	do {
+		System.out.println("Enter your email");
+	    email = input.nextLine();
+		
+		System.out.println("Enter your password");
+		password = input.nextLine();
+		
+	    regex = "^[\\w-_\\.+]*[\\w-_\\.]\\@([\\w]+\\.)+[\\w]+[\\w]$";
+		pattern =  "(?=.*[a-z])(?=.*[@#$%^&+=])(?=.*[0-9]).{5,}";
+		
+		if(email.matches(regex) && password.matches(pattern)){
+		System.out.println("Welcome, " + email);
+		}
+	
+	} while(!(email.matches(regex) && password.matches(pattern)));
+		input.close();
+	}
+}
+	
