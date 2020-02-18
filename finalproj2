@@ -1,0 +1,66 @@
+package CoreJava.DAO;
+
+import CoreJava.Models.Student;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+public class StudentDAO {
+	public StudentDAO() {
+		
+	}
+	public List<Student> getStudents() {
+
+		ArrayList<Student> students = new ArrayList<Student>();
+
+		File file = new File("C:\\Users\\Baffour\\eclipse-workspace\\JD-FinalProject\\src\\students.csv");
+		Scanner in;
+		try {
+			in = new Scanner(file);
+			String[] line;
+			while (in.hasNextLine()) {
+				line = in.nextLine().split(",");
+				students.add(new Student(line[0], line[1], line[2]));
+				
+			}
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		return students;
+	}
+
+	public Student getStudentByEmail(List<Student> studentList, String studentEmail) {
+		//loop through the student list,and check the students email, if the email is in the list then you want to return that student
+    Student h = null;
+    for(Student p : studentList)
+    {
+    	if(p.getEmail().equals(studentEmail))
+    			{
+    		h=p;
+    		
+    			}
+    	
+    }
+    	return h;
+	
+	}
+
+
+	
+	public boolean validateUser(List<Student> studentList, String studentEmail, String studentPass) {
+	
+		 for(Student p : studentList)
+		    {
+		    	if(p.getEmail().equals(studentEmail) && p.getPass().equals(studentPass))
+		    			{
+		    		return true;
+		    			}
+		    }
+		 return false;
+	}
+	}
