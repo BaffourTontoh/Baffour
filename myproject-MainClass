@@ -1,0 +1,19 @@
+package org.perscholas;
+
+public class MainClass {
+
+	public static void main(String[] args) {
+		User test = new User(123,"Baffour","Tontoh","4132422667","augkob@yahoo.com","jhgjhgkjg",45,67,90);
+		System.out.println(test.getEmail());
+		System.out.println(test.getFirstName());
+		System.out.println(test.getLastName());
+		System.out.println(test.getPhoneNumber());
+		System.out.println(test.getPassword());
+		System.out.println(test.getMenuId());
+		System.out.println(test.getOrderId());
+		System.out.println(test.getUserId());
+		System.out.println(test.getDishId());
+
+	}
+
+}
