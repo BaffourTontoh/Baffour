@@ -1,0 +1,39 @@
+package org.perscholas;
+
+public class Dish {
+	
+	private int DishId;
+	private String DishName;
+	private String DishOrigin;
+	
+	public Dish() {
+		
+	}
+	public Dish(int DishId,String DishName,String DishOrigin) {
+		
+		this.DishId = DishId;
+		this.DishName = DishName;
+		this.DishOrigin = DishOrigin;
+		
+		}
+	public int getDishId() {
+		return DishId;
+	}
+	public void setDishId(int dishId) {
+		DishId = dishId;
+	}
+	public String getDishName() {
+		return DishName;
+	}
+	public void setDishName(String dishName) {
+		DishName = dishName;
+	}
+	public String getDishOrigin() {
+		return DishOrigin;
+	}
+	public void setDishOrigin(String dishOrigin) {
+		DishOrigin = dishOrigin;
+	}
+	
+		}
+	
