@@ -1,0 +1,51 @@
+package org.perscholas;
+
+public class Menu {
+	
+	private String MenuName;
+	private int MenuId;
+	private int ChefId;
+	private int OrderId;
+	private int DishId;
+	
+	public Menu() {
+		
+	}
+public Menu(String MenuName,int MenuId,int ChefId,int OrderId,int DishId) {
+	this.MenuName = MenuName;
+	this.MenuId = MenuId;
+	this.ChefId = ChefId;
+	this.OrderId = OrderId;
+	this.DishId = DishId;
+}
+public String getMenuName() {
+	return MenuName;
+}
+public void setMenuName(String MenuName) {
+	this.MenuName = MenuName;
+}
+public int getMenuId() {
+	return MenuId;
+}
+public void setMenuId(int MenuId) {
+	this.MenuId = MenuId;
+}
+public int getChefId() {
+	return ChefId;
+}
+public void setChefId(int ChefId) {
+	this.ChefId = ChefId;
+}
+public int getOrderId() {
+	return OrderId;
+}
+public void setOrderId(int OrderId) {
+	this.OrderId = OrderId;
+}
+public int getDishId() {
+	return DishId;
+}
+public void setDishId(int DishId) {
+	this.DishId = DishId;
+}
+}
