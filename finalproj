@@ -1,0 +1,106 @@
+ackage CoreJava.DAO;
+
+import CoreJava.Models.Attending;
+import CoreJava.Models.Course;
+import CoreJava.Models.Student;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+public class AttendingDAO {
+
+	
+    public List<Attending> getAttending(){
+    	
+    	ArrayList<Attending> attending = new ArrayList<Attending>();
+
+		File file = new File("C:\\Users\\Baffour\\eclipse-workspace\\JD-FinalProject\\src\\Attending.csv");
+		Scanner in;
+		try {
+			in = new Scanner(file);
+			String[] line;
+			while (in.hasNextLine()) {
+				line = in.nextLine().split(",");
+				attending.add(new Attending(Integer.parseInt(line[0]), line[1]));
+				
+			}
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		return attending;
+    	
+
+    }
+
+    public void registerStudentToCourse(List<Attending> attending, String studentEmail, int courseID){
+       int found = 0;
+    	// Attending h = null;
+    	    for(Attending p : attending)
+    	    {
+    	    	if(p.getStudentEmail().equals(studentEmail)&& p.getCourseID()==courseID)
+    	    			{
+    	    		found++;
+    	    		
+    	    			}
+    	    	
+    	    }    
+    	    if(found==1) {
+    	    	System.out.println("Already registered");
+    	    }
+    	    else if(found==0) {
+    	    	attending.add(new Attending(courseID,studentEmail));
+    	    }
+    }
+
+    public List<Course> getStudentCourses(List<Course> courseList, List<Attending> attending, String studentEmail){
+    	List<Course> newCourseList = new ArrayList<>();
+    	
+    	for(Attending a : attending) 
+    	{
+    		if(a.getStudentEmail().equals(studentEmail))
+    		for(Course c : courseList) 
+    		{ 
+    			
+    				if(a.getCourseID()==c.getID()) {
+    					
+    					newCourseList.add(new Course(c.getID(),c.getName(),c.getInstructor()));
+    				}
+    			
+    		}
+    	}
+    	
+		return newCourseList;
+   //loop through the attending list, check each attending object if the email matches the emailin the list 
+		
+    }
+
+    public void saveAttending(List<Attending> attending){
+     
+    	String location = "C:\\Users\\Baffour\\eclipse-workspace\\JD-FinalProject\\src\\Attending.csv";
+    	File file = new File(location);
+    	try {
+			FileWriter writer = new FileWriter(file,true);
+			
+			for(Attending a : attending)
+		    {
+		    	String s = a.getCourseID() + ","+a.getStudentEmail()+"\n";
+		    	writer.write(s);
+		    	
+		    	
+		    }
+			writer.close();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+    	
+ }
+
+}
