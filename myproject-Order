@@ -1,0 +1,76 @@
+package org.perscholas;
+
+public class Order {
+	
+	private int orderId;
+	private String orderDate;
+	private String orderTime;
+	private int chefId;
+	private int menuId;
+	private int userId;
+	private int dishId;
+	private double price;
+	
+	public Order() {
+		
+	}
+public Order(int orderId,String orderDate,String orderTime,int chefId,int menuId,int userId,int dishId,double price) {
+	this.orderId = orderId;
+	this.orderDate = orderDate;
+	this.orderTime = orderTime;
+	this.chefId = chefId;
+	this.menuId = menuId;
+	this.userId = userId;
+	this.dishId = dishId;
+	this.price = price;
+	
+}
+public int getOrderId() {
+	return orderId;
+}
+public void setOrderId(int orderId) {
+	this.orderId = orderId;
+}
+public String getOrderDate() {
+	return orderDate;
+}
+public void setOrderDate(String orderDate) {
+	this.orderDate = orderDate;
+}
+public String getOrderTime() {
+	return orderTime;
+}
+public void setOrderTime(String orderTime) {
+	this.orderTime = orderTime;
+}
+public int getChefId() {
+	return chefId;
+}
+public void setChefId(int chefId) {
+	this.chefId = chefId;
+}
+public int getMenuId() {
+	return menuId;
+}
+public void setMenuId(int menuId) {
+	this.menuId = menuId;
+}
+public int getUserId() {
+	return userId;
+}
+public void setUserId(int userId) {
+	this.userId = userId;
+}
+public int getDishId() {
+	return dishId;
+}
+public void setDishId(int dishId) {
+	this.dishId = dishId;
+}
+public double getPrice() {
+	return price;
+}
+public void setPrice(double price) {
+	this.price = price;
+}
+}
